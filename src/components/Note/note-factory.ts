@@ -2,7 +2,7 @@ import HtmlNote from './HtmlNote';
 import MemeNote from './MemeNote';
 import UrlNote from './UrlNote';
 
-const URL_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+const URL_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w\-._~:/?#[\]@!$&'()*+,;=.]+$/;
 const IMAGE_EXT = ['jpg', 'jpeg', 'gif', 'png'];
 
 export function isUrl(str: string) {
