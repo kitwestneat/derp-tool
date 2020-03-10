@@ -7,7 +7,7 @@ interface Props {
 }
 
 const NoteList: React.FC<Props> = ({ notes }: Props) => (
-    <div>
+    <div className="note-list">
         {notes.map(note => (
             <Note {...note} />
         ))}

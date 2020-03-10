@@ -1,4 +1,24 @@
 .container {
-    display: flexbox;
     max-width: 900px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header img {
+    max-height: 20vh;
+    width: auto;
+}
+
+.note-list {
+    display: flex;
+}
+
+.note-list .note {
+    height: 20vh;
+    min-width: 10vw;
+    border: solid black 1px;
+    margin: 7px;
+    padding: 7px;
 }
