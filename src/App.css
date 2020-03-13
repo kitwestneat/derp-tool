@@ -19,7 +19,7 @@
 
 .note-list .note {
     min-width: 10vw;
-    max-width: 50vw;
+    max-width: 40vw;
     border: solid #ccc 1px;
     border-radius: 8px;
     margin: 7px;
@@ -29,6 +29,9 @@
     height: min-content;
     min-height: 100px;
     font-size: 16px;
+    flex-basis: 10vw;
+    flex-shrink: 1;
+    flex-grow: 1;
 }
 
 .noteHeader {
@@ -51,9 +54,15 @@
     flex-grow: 1;
 }
 
-.note-list .noteBody img {
-    max-height: 20vh;
+.note-meme {
     width: 100%;
+    text-align: center;
+}
+
+.note-meme img {
+    max-height: 20vh;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .note-url {

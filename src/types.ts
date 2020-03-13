@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 export interface TagType {
     slug: string;
@@ -19,14 +19,14 @@ export interface NoteType {
     tags: TagType[];
 }
 
-export type EditorType = React.ComponentType<{ note: NoteType }>;
+interface EditorTypeProps {
+    note: NoteType;
+    updateNote(note: NoteType): void;
+}
+
+export type EditorType = React.ComponentType<EditorTypeProps>;
 
 export interface NoteFrameChild {
     note: NoteType;
-    popup(props: PopupState): void;
-}
-
-export interface PopupState {
-  content?: ReactElement;
-  onClose?(): void;
+    updateNote(note: NoteType): void;
 }

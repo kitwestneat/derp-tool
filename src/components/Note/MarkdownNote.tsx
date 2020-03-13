@@ -3,9 +3,9 @@ import NoteFrame from './NoteFrame';
 import { NoteFrameChild } from '../../types';
 import MarkdownEditor from '../Editors/MarkdownEditor';
 
-const MarkdownNote: React.FC<NoteFrameChild> = ({ note, popup }) => (
-    <NoteFrame note={note} Editor={MarkdownEditor} popup={popup}>
-        <div dangerouslySetInnerHTML={{ __html: note.body }}></div>
+const MarkdownNote: React.FC<NoteFrameChild> = (props) => (
+    <NoteFrame Editor={MarkdownEditor} {...props}>
+        <div dangerouslySetInnerHTML={{ __html: props.note.body }}></div>
     </NoteFrame>
 );
 

@@ -6,12 +6,9 @@ import MarkdownEditor from '../Editors/MarkdownEditor';
 
 const MemeNote: React.FC<NoteFrameChild> = props => (
     <NoteFrame {...props} Editor={MarkdownEditor}>
-        <img
-            className='link'
-            src={props.note.body}
-            alt='meme'
-            onClick={() => gotoUrl(props.note.body)}
-        />
+        <div className='note-meme link'>
+            <img src={props.note.body} alt='meme' onClick={() => gotoUrl(props.note.body)} />
+        </div>
     </NoteFrame>
 );
 
