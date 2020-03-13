@@ -1,6 +1,8 @@
 import React from 'react';
 import NoteFrame from './NoteFrame';
-import { NoteType, UrlPreviewType } from '../../types';
+import { UrlPreviewType, NoteFrameChild } from '../../types';
+import { gotoUrl } from '../../util';
+import MarkdownEditor from '../Editors/MarkdownEditor';
 
 function getPreview(body: string): UrlPreviewType {
     try {
@@ -16,16 +18,17 @@ function getPreview(body: string): UrlPreviewType {
     };
 }
 
-const UrlNote: React.FC<NoteType> = React.memo(({ body, title, tags }) => {
-    const preview = getPreview(body);
+const UrlNote: React.FC<NoteFrameChild> = props => {
+    const preview = getPreview(props.note.body);
 
     return (
-        <NoteFrame title={title} tags={tags}>
-            <div>
-                <div><a href={preview.url}>{preview.title || preview.url}</a></div>
+        <NoteFrame {...props} Editor={MarkdownEditor}>
+            <div onClick={() => gotoUrl(preview.url)}>
+                {preview.title && <div className='note-url-title'>{preview.title}</div>}
+                <div className='note-url'>{preview.url}</div>
             </div>
         </NoteFrame>
     );
-});
+};
 
-export default UrlNote;
+export default React.memo(UrlNote);

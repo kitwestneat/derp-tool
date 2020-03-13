@@ -1,5 +1,6 @@
 .container {
     max-width: 900px;
+    margin: 0 auto;
 }
 
 .header {
@@ -13,12 +14,61 @@
 
 .note-list {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .note-list .note {
-    height: 20vh;
     min-width: 10vw;
-    border: solid black 1px;
+    max-width: 50vw;
+    border: solid #ccc 1px;
+    border-radius: 8px;
     margin: 7px;
     padding: 7px;
+    flex-direction: column;
+    display: flex;
+    height: min-content;
+    min-height: 100px;
+    font-size: 16px;
+}
+
+.noteHeader {
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.noteTags {
+    display: inline-flex;
+}
+
+.note-list .noteBody {
+    max-height: 20vh;
+    flex-grow: 1;
+}
+
+.note-list .noteBody img {
+    max-height: 20vh;
+    width: 100%;
+}
+
+.note-url {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    background: white;
+    border-bottom: black 1px solid;
+    border-left: black 1px solid;
 }

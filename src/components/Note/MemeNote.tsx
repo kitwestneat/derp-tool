@@ -1,11 +1,18 @@
 import React from 'react';
 import NoteFrame from './NoteFrame';
-import { NoteType } from '../../types';
+import { NoteFrameChild } from '../../types';
+import { gotoUrl } from '../../util';
+import MarkdownEditor from '../Editors/MarkdownEditor';
 
-const MemeNote: React.FC<NoteType> = React.memo(({ body, title, tags }) => (
-    <NoteFrame title={title} tags={tags}>
-        <img src={body} alt="meme" />
+const MemeNote: React.FC<NoteFrameChild> = props => (
+    <NoteFrame {...props} Editor={MarkdownEditor}>
+        <img
+            className='link'
+            src={props.note.body}
+            alt='meme'
+            onClick={() => gotoUrl(props.note.body)}
+        />
     </NoteFrame>
-));
+);
 
-export default MemeNote;
+export default React.memo(MemeNote);

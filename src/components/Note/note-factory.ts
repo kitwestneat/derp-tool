@@ -1,4 +1,4 @@
-import HtmlNote from './HtmlNote';
+import MarkdownNote from './MarkdownNote';
 import MemeNote from './MemeNote';
 import UrlNote from './UrlNote';
 
@@ -22,5 +22,5 @@ export function getNoteType(body: string) {
         }
     }
 
-    return HtmlNote;
+    return MarkdownNote;
 }

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { getNoteType } from './note-factory';
-import { NoteType } from '../../types';
+import { NoteFrameChild } from '../../types';
 
-const index: React.FC<NoteType> = React.memo(note => {
-    const Comp = getNoteType(note.body);
-    return <Comp {...note} />;
-});
+const index: React.FC<NoteFrameChild> = props => {
+    const Comp = getNoteType(props.note.body);
+
+    return <Comp {...props} />;
+};
 export default index;

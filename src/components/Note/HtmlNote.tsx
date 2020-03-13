@@ -1,11 +1,12 @@
 import React from 'react';
 import NoteFrame from './NoteFrame';
-import { NoteType } from '../../types';
+import { NoteFrameChild } from '../../types';
+import MarkdownEditor from '../Editors/MarkdownEditor';
 
-const HtmlNote: React.FC<NoteType> = React.memo(({ body, title, tags }) => (
-    <NoteFrame title={title} tags={tags}>
-        <div dangerouslySetInnerHTML={{ __html: body }}></div>
+const HtmlNote: React.FC<NoteFrameChild> = (props) => (
+    <NoteFrame {...props} Editor={MarkdownEditor}>
+        <div dangerouslySetInnerHTML={{ __html: props.note.body }}></div>
     </NoteFrame>
-));
+);
 
-export default HtmlNote;
+export default React.memo(HtmlNote);
